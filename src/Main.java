@@ -23,20 +23,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc-test", "root", "Pokemon1997");
-
-            Statement statement = connection.createStatement();
-
-            ResultSet resultset = statement.executeQuery("select * from user where id > 1");
-
-            while (resultset.next()) {
-                System.out.println(resultset.getString("username"));
-            }
-        } catch (Exception e) {
-            System.out.println("Cannot do it!!");
-        }
-
         launch(args);
     }
 }
