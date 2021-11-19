@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+    <children>
+        <TabPane layoutY="94.0" prefHeight="320.0" prefWidth="1101.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="allTab" onSelectionChanged="#allTabClickHandler" text="All Appointments">
+                    <content>
+                        <TableView fx:id="allTableView" prefHeight="291.0" prefWidth="1080.0">
+                            <columns>
+                                <TableColumn fx:id="ID_col" prefWidth="100.0" text="Appointment ID" />
+                                <TableColumn fx:id="customerID_col" prefWidth="100.0" text="Customer ID" />
+                                <TableColumn fx:id="title_col" prefWidth="130.0" text="Title" />
+                                <TableColumn fx:id="desc_col" prefWidth="150.0" text="Description" />
+                                <TableColumn fx:id="location_col" prefWidth="130.0" text="Location" />
+                                <TableColumn fx:id="contact_col" prefWidth="115.0" text="Contact" />
+                                <TableColumn fx:id="type_col" prefWidth="112.0" text="Type" />
+                                <TableColumn fx:id="date_Col" prefWidth="88.0" text="Date" />
+                                <TableColumn fx:id="start_col" prefWidth="88.0" text="Start Time" />
+                                <TableColumn fx:id="end_col" prefWidth="88.0" text="End Time" />
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+                <Tab fx:id="weekTab" onSelectionChanged="#weekTabClickHandler" text="Show by Week">
+                    <content>
+                        <TreeTableView fx:id="byWeekTableView" prefHeight="200.0" prefWidth="200.0">
+                            <columns>
+                                <TreeTableColumn fx:id="appIDByWeek_treeCol" prefWidth="200.0" text="Appointment ID" />
+                                <TreeTableColumn fx:id="customerIDByWeek_treeCol" prefWidth="100.0" text="Customer ID" />
+                                <TreeTableColumn fx:id="titleByWeek_treeCol" prefWidth="115.0" text="Title" />
+                                <TreeTableColumn fx:id="descByWeek_treeCol" prefWidth="130.0" text="Description" />
+                                <TreeTableColumn fx:id="locationByWeek_treeCol" prefWidth="115.0" text="Location" />
+                                <TreeTableColumn fx:id="contactByWeek_treeCol" prefWidth="105.0" text="Contact" />
+                                <TreeTableColumn fx:id="typeByWeek_treeCol" prefWidth="110.0" text="Type" />
+                                <TreeTableColumn fx:id="dateByWeek_treeCol" prefWidth="87.0" text="Date" />
+                                <TreeTableColumn fx:id="startTimeByWeek_treeCol" prefWidth="69.0" text="Start Time" />
+                                <TreeTableColumn fx:id="endTimeByWeek_treeCol" prefWidth="69.0" text="End Time" />
+                            </columns>
+                        </TreeTableView>
+                    </content>
+                </Tab>
+                <Tab fx:id="monthTab" onSelectionChanged="#monthTabClickHandler" text="Show by Month">
+                    <content>
+                        <TreeTableView fx:id="byMonthTableView" prefHeight="200.0" prefWidth="200.0">
+                            <columns>
+                                <TreeTableColumn fx:id="appIDByMonth_treeCol" prefWidth="200.0" text="Appointment ID" />
+                                <TreeTableColumn fx:id="customerIDByMonth_treeCol" prefWidth="100.0" text="Customer ID" />
+                                <TreeTableColumn fx:id="titleByMonth_treeCol" prefWidth="115.0" text="Title" />
+                                <TreeTableColumn fx:id="descByMonth_treeCol" prefWidth="130.0" text="Description" />
+                                <TreeTableColumn fx:id="locationByMonth_treeCol" prefWidth="115.0" text="Location" />
+                                <TreeTableColumn fx:id="contactByMonth_treeCol" prefWidth="105.0" text="Contact" />
+                                <TreeTableColumn fx:id="typeByMonth_treeCol" prefWidth="110.0" text="Type" />
+                                <TreeTableColumn fx:id="dateByMonth_treeCol" prefWidth="87.0" text="Date" />
+                                <TreeTableColumn fx:id="startTimeByMonth_treeCol" prefWidth="69.0" text="Start Time" />
+                                <TreeTableColumn fx:id="endTimeByMonth_treeCol" prefWidth="69.0" text="End Time" />
+                            </columns>
+                        </TreeTableView>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Label fx:id="mainLabel" layoutX="17.0" layoutY="17.0" text="Welcome back, ">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button layoutX="949.0" layoutY="23.0" mnemonicParsing="false" onAction="#checkReportClickHandler" prefHeight="42.0" prefWidth="134.0" text="Check Report">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button layoutX="932.0" layoutY="431.0" mnemonicParsing="false" onAction="#exitClickHandler" prefHeight="42.0" prefWidth="156.0" text="Exit Application" />
+        <Button fx:id="addAppointmentButton" layoutX="243.0" layoutY="434.0" mnemonicParsing="false" onAction="#addAppointmentClickHandler" prefHeight="25.0" prefWidth="156.0" text="Add New Appointment" />
+        <Button fx:id="modifyAppointmentButton" layoutX="409.0" layoutY="434.0" mnemonicParsing="false" onAction="#modifyAppointmentClickHandler" prefHeight="25.0" prefWidth="156.0" text="Modify Appointment" />
+        <Button fx:id="deleteAppointmentButton" layoutX="576.0" layoutY="434.0" mnemonicParsing="false" onAction="#deleteAppointmentClickHandler" prefHeight="25.0" prefWidth="156.0" text="Delete Appointment" />
+        <Label layoutX="49.0" layoutY="61.0" text="Appointments">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="viewCustomerButton" layoutX="78.0" layoutY="434.0" mnemonicParsing="false" onAction="#viewCustomerListClickHandler" prefHeight="25.0" prefWidth="156.0" text="View Customer List" />
+      <HBox layoutY="483.0" prefHeight="17.0" prefWidth="1100.0">
+         <children>
+            <Label fx:id="bottomLabel" layoutX="20.0" />
+         </children>
+      </HBox>
+
+
+    </children>
+</AnchorPane>
